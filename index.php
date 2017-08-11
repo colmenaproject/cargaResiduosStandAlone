@@ -10,7 +10,7 @@
 </head>
 <body>
 <form action="" method="POST">
-<!--TODO Traer los options desde la tabla residuo_capacidad -->
+
 <div>
 		<input id="range_0" type="range" min="0" max="150" value="0" onload="createRanges()" oninput="updateRange(this.id)" />
 </div>
