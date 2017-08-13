@@ -4,24 +4,34 @@ $(document).ready(function(){
 
 
 function appendRanges() {
-   for(var numRange = 0; numRange < 13; numRange++){//TODO: ver como traer la cantidad de la base
+   for(var numRange = 0; numRange < 16; numRange++){//TODO: ver como traer la cantidad de la base
       var newDiv = createDiv();
-      var newLabel = createLabel();
+      var capacity = createLabel(numRange);
       var newRange = createRange(numRange);
       var newTextField = createTextField(numRange);
-      newDiv.appendChild(newLabel);
+      var lblBotellas = createLblBotellas();
+      newDiv.appendChild(capacity);
       newDiv.appendChild(newRange);
       newDiv.appendChild(newTextField);
+      newDiv.appendChild(lblBotellas);
       document.getElementsByTagName('form')[0].appendChild(newDiv);
    }   
 }
 
-function createLabel(){
-  var newLabel = document.createElement('label');
-  newLabel.innerHTML = "Capacidad ()";
-  return newLabel;
+function createLblBotellas() {
+  var lblBotellas = document.createElement('label');
+  lblBotellas.innerHTML = "botellas";
+  return lblBotellas;
+}
+
+function createLabel(numRange){
+  var capacity = document.createElement('label');
+  var capacities = [0.3, 0.5, 0.75, 0.8, 0.9, 1, 1.25, 1.35, 1.5, 1.65, 2, 2.25, 2.5, 3, 5, 6];
+  capacities = capacities.map(capacity => capacity.toFixed(2));
+  capacity.innerHTML = `${capacities[numRange]} lts.`;
+  return capacity;
   //TODO: ver como traer las capacidades de la DB
-  //0.3, 0.5, 0.75, 0.8, 0.9, 1, 1.25, 1.35, 1.5, 1.65, 2, 2.25, 2.5, 3, 5, 6, Otra
+  //TODO: Otra
 }
 
 function createDiv() {  
