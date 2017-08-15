@@ -21,20 +21,17 @@
    </head>
    <body>
       <form class="text-center" action="" method="POST">
-      <div id="users">
-         <label>Usuario:</label>
-         <select class="chosen-select">
-            <option>A</option>
-            <option>AAA</option>
-            <option>AAAAA</option>
-         </select>
-      </div>
-      <div id="datepicker-center">
-         <div id="datepicker">
-            <script src="script/datepicker-conf.js"></script>
+         <div id="users">
+            <label>Usuario:</label>
+            <select class="chosen-select">
+               <option>A</option>
+               <option>AAA</option>
+               <option>AAAAA</option>
+            </select>
          </div>
-      </div>
-      
+         <script src="script/datepicker-conf.js"></script>
+         <p>Fecha: <input type="text" id="datepicker"></p>   
+         <input type="submit" value="Registrar" />
       </form>
    </body>
 <script>
