@@ -45,11 +45,11 @@ function createRange(numRange) {
       newRange.min = 0;
       newRange.max = 150;
       newRange.value = 0;
-      $(document).on('input', `#${newRange.id}`, updateRange);
+      $(document).on('input', `#${newRange.id}`, updateTextField);
       return newRange;
 }
 
-function updateRange(event) {
+function updateTextField(event) {
    var txtField = document.getElementById(event.target.id.replace('range', 'textField'));
    txtField.value = event.target.value; 
 }
@@ -61,5 +61,11 @@ function createTextField(numTextField) {
     newTextField.value = 0;
     newTextField.maxLength = 3; //TODO: traer longitud de max
     newTextField.size = 3;
+    $(document).on('input', `#${newTextField.id}`, updateRange);
     return newTextField;
+}
+
+function updateRange(event) {
+   var component = document.getElementById(event.target.id.replace('textField', 'range'));//TODO: hacer una funcion más generica, considerar updateTextField
+   component.value = event.target.value; 
 }
