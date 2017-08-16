@@ -31,10 +31,13 @@
          </div>
          <script src="script/datepicker-conf.js"></script>
          <p>Fecha: <input type="text" id="datepicker"></p>   
-         <input type="submit" value="Registrar" />
       </form>
    </body>
 <script>
    $(".chosen-select").chosen();
 </script>
 </html>
+
+<?php
+
+include 'db/DBConfig.php';
